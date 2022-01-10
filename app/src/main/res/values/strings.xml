@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Pullcode</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="full_name">Full name</string>
+    <string name="address">Address</string>
+    <string name="no_phone">No.Phone</string>
+    <string name="city">City</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hotel">Hotel</string>
+    <string name="resto">Resto</string>
+    <string name="destination">Destination</string>
+    <string name="hotel_pilihan_recomended">Hotel pilihan Recomended</string>
+    <string name="hotel_pilihan_populer">Hotel Pilihan Populer</string>
+    <string name="jelajahi_hotel_yang_sedang_tren">jelajahi hotel yang sedang tren</string>
+    <string name="hotel_pilihan_baru">Hotel Pilihan Baru</string>
+    <string name="destinasi_terpopuler">Destinasi Terpopuler..</string>
+    <string name="bersama_keluarga_liburan">Bersama keluarga liburan</string>
+    <string name="restaurant_pilihan_recommended">Restaurant Pilihan Recommended</string>
+    <string name="jelajahi_restaurant_terbaik">jelajahi restaurant terbaik</string>
+    <string name="harga_tiket">Harga tiket</string>
+    <string name="idr_500_000">IDR 500.000</string>
+    <string name="_2_expired">2 Expired</string>
+    <string name="island_pink_kid_s">Island Pink Kid\'s</string>
+    <string name="check_in">Self-Data</string>
+    <string name="tanggal_berangkat">Tanggal Berangkat</string>
+    <string name="fasilitas">Fasilitas</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYXJhYmFpbmFoIiwiYSI6ImNreHc1NGh4bjM5bmQyd2tvYnVwdWZ2dm8ifQ.RQeljwTzhOvjjUBHQ4IJdg</string>
+    <string name="payment_summary">Payment Summary</string>
+    <string name="destination_details">Destination Details</string>
+    <string name="cari_pengalaman_mu_disini">Cari Pengalaman mu disini</string>
+    <string name="cari_pengalaman_kuliner_mu">Cari pengalaman kuliner mu</string>
+</resources>
