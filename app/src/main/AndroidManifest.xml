@@ -9,10 +9,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:name=".Traveling"
@@ -22,6 +24,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pullcode.NoActionBar">
+        <activity
+            android:name=".ui.category.holidays.HolidaysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.holidays.AdventureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.products.hotels.HotelsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.products.resto.RestoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.products.CheckoutProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.category.products.ProductsDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.home.search.SearchActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.dashboard.explore.VideoActivity"
             android:exported="false" />

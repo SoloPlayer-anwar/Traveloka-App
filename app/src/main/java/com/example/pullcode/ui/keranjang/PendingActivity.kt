@@ -12,6 +12,8 @@ import com.example.pullcode.R
 import com.example.pullcode.Traveling
 import com.example.pullcode.databinding.ActivityPendingBinding
 import com.example.pullcode.response.transaction.Data
+import com.example.pullcode.response.transaction.Destinasi
+import com.example.pullcode.response.transaction.Product
 import com.example.pullcode.response.transaction.TransactionResponse
 import com.example.pullcode.ui.chat.ChatActivity
 
@@ -49,14 +51,8 @@ class PendingActivity : AppCompatActivity(), PendingContract.View, AdapterPendin
 
     override fun transactionPending(transactionResponse: TransactionResponse) {
         Log.d("token", "ini token"+Traveling.getApp().getToken())
-        if (transactionResponse.data.isNullOrEmpty()) {
-            binding.rvPending.visibility = View.INVISIBLE
-            binding.linearLayout5.visibility = View.VISIBLE
-        }else {
-            val adapter = AdapterPending(transactionResponse.data, this)
-            binding.rvPending.layoutManager = LinearLayoutManager(this)
-            binding.rvPending.adapter = adapter
-        }
+        binding.rvPending.layoutManager = LinearLayoutManager(this)
+        binding.rvPending.adapter = AdapterPending(transactionResponse.data, this)
 
     }
 

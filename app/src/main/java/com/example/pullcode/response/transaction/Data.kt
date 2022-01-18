@@ -78,6 +78,18 @@ data class Data(
     val user: User?,
 
     @Expose
+    @SerializedName("picture_product")
+    val pictureProduct: String?,
+
+    @Expose
+    @SerializedName("name")
+    val name:String?,
+
+    @Expose
+    @SerializedName("rating")
+    val rating:Double,
+
+    @Expose
     @SerializedName("user_id")
     val userId: Int?
 ):Parcelable

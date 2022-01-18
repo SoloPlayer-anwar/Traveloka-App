@@ -21,7 +21,13 @@ import com.example.pullcode.response.product.Data
 import com.example.pullcode.response.product.ProductResponse
 import com.example.pullcode.ui.category.AdapterDestinasi
 import com.example.pullcode.ui.category.DetailDestinasiActivity
+import com.example.pullcode.ui.category.holidays.AdventureActivity
+import com.example.pullcode.ui.category.holidays.HolidaysActivity
+import com.example.pullcode.ui.category.products.ProductsDetailActivity
+import com.example.pullcode.ui.category.products.hotels.HotelsActivity
+import com.example.pullcode.ui.category.products.resto.RestoActivity
 import com.example.pullcode.ui.chat.ChatActivity
+import com.example.pullcode.ui.dashboard.home.search.SearchActivity
 import com.example.pullcode.ui.keranjang.PendingActivity
 
 
@@ -31,7 +37,12 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
     private var listRecommended: ArrayList<Data> = ArrayList()
     private var listPopuler: ArrayList<Data> = ArrayList()
     private var listNew: ArrayList<Data> = ArrayList()
-    private var ResList: ArrayList<Data> = ArrayList()
+    private var resList: ArrayList<Data> = ArrayList()
+    private var destiList: ArrayList<com.example.pullcode.response.destinasi.Data> = ArrayList()
+    private var restoList: ArrayList<Data> = ArrayList()
+    private var hotelList: ArrayList<Data> = ArrayList()
+    private var destinationList: ArrayList<com.example.pullcode.response.destinasi.Data> = ArrayList()
+    private var adventureList: ArrayList<com.example.pullcode.response.destinasi.Data> = ArrayList()
     var loadingDialog : Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +73,7 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
         super.onViewCreated(view, savedInstanceState)
         presenter = HomePresenter(this)
         initLoading()
-        presenter.getHome(24)
+        presenter.getHome()
         presenter.getDestinasi()
 
 
@@ -71,11 +82,15 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
             startActivity(intent)
         }
 
-        binding.ivChat.setOnClickListener {
-            val intent = Intent(context, ChatActivity::class.java)
-            startActivity(intent)
+
+
+        binding.cardView.setOnClickListener {
+            startActivity(Intent(context, SearchActivity::class.java))
         }
 
+        binding.ivChat.setOnClickListener {
+            startActivity(Intent(context, ChatActivity::class.java))
+        }
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel("https://firebasestorage.googleapis.com/v0/b/uniskabanjarmasinapplication.appspot.com/o/traveloka3.jpg?alt=media&token=7e7eb43e-7256-48fb-aee7-218b59e44bdd", ScaleTypes.CENTER_CROP, ))
@@ -110,6 +125,28 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
     override fun homeSuccess(productResponse: ProductResponse) {
         for ( a in productResponse.data.indices)
         {
+
+            if(productResponse.data[a].category.equals("Resto", true)
+                || productResponse.data[a].category.equals("Indian Food", true)
+                || productResponse.data[a].category.equals("Chinise Food", true)) {
+                restoList.add(productResponse.data[a])
+
+                binding.ivResto.setOnClickListener {
+                    val intent = Intent(context, RestoActivity::class.java)
+                        .putExtra("data", restoList)
+                    startActivity(intent)
+                }
+            }else if(productResponse.data[a].category.equals("Recommended", true)
+                || productResponse.data[a].category.equals("Populer", true)
+                ||productResponse.data[a].category.equals("New Room", true)) {
+                hotelList.add(productResponse.data[a])
+
+                binding.ivHotel.setOnClickListener {
+                    val intent = Intent(context, HotelsActivity::class.java).putExtra("data", hotelList)
+                    startActivity(intent)
+                }
+            }
+
             val items: List<String> = productResponse.data[a].category?.split(",") ?: ArrayList()
             for(x in items.indices)
             {
@@ -128,7 +165,7 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
 
 
                     items[x].equals("Resto", true) -> {
-                        ResList.add(productResponse.data[a])
+                        resList.add(productResponse.data[a])
                     }
                 }
             }
@@ -149,14 +186,44 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
         binding.rvBaru.adapter = adapterNew
 
 
-        val adapterResto = HomeAdapter(ResList, this)
+        val adapterResto = HomeAdapter(resList, this)
         binding.rvResto.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvResto.adapter = adapterResto
+
+
     }
 
     override fun destinationSuccess(destinasiResponse: DestinasiResponse) {
 
-        val adapter = AdapterDestinasi(destinasiResponse.data, this)
+        for(a in destinasiResponse.data.indices) {
+
+            if (destinasiResponse.data[a].category.equals("Bali", true)){
+                destinationList.add(destinasiResponse.data[a])
+                binding.ivDestination.setOnClickListener {
+                    val intent = Intent(context, HolidaysActivity::class.java)
+                        .putExtra("data", destinationList)
+                    startActivity(intent)
+                }
+            }else if (destinasiResponse.data[a].category.equals("Adventure")) {
+                adventureList.add(destinasiResponse.data[a])
+                binding.ivAdventure.setOnClickListener {
+                    val intent = Intent(context, AdventureActivity::class.java)
+                        .putExtra("data", adventureList)
+                    startActivity(intent)
+                }
+            }
+
+            val items: List<String> = destinasiResponse.data[a].category?.split(",") ?: ArrayList()
+            for (x in items.indices) {
+                when {
+                    items[x].equals("Bali", true) -> {
+                        destiList.add(destinasiResponse.data[a])
+                    }
+                }
+            }
+        }
+
+        val adapter = AdapterDestinasi(destiList, this)
         binding.rvDestinasi.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvDestinasi.adapter = adapter
     }
@@ -189,7 +256,9 @@ class HomeFragment : Fragment(), HomeContract.View, HomeAdapter.ItemAdapterCallb
     }
 
     override fun onCLick(v: View, data: Data) {
-        Toast.makeText(context, "tes", Toast.LENGTH_SHORT).show()
+        val intent = Intent(context, ProductsDetailActivity::class.java)
+            .putExtra("data", data)
+        startActivity(intent)
     }
 
     override fun onCLick(v: View, data: com.example.pullcode.response.destinasi.Data) {

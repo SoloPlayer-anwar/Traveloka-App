@@ -1,5 +1,6 @@
 package com.example.pullcode.network
 
+import android.net.Uri
 import com.example.pullcode.response.Iterable
 import com.example.pullcode.response.bandara.BandaraResponse
 import com.example.pullcode.response.checkout.CheckoutResponse
@@ -10,6 +11,7 @@ import com.example.pullcode.response.sign.SignResponse
 import com.example.pullcode.response.transaction.Data
 import com.example.pullcode.response.transaction.TransactionResponse
 import io.reactivex.Observable
+import okhttp3.MultipartBody
 import retrofit2.http.*
 
 interface Endpoint {
@@ -17,6 +19,11 @@ interface Endpoint {
     @POST("login")
     fun login(@Field("email")email:String,
               @Field("password")password:String):Observable<Iterable<SignResponse>>
+
+
+    @Multipart
+    @POST("user/photo")
+    fun photoRegister(@Part profileImage: MultipartBody.Part):Observable<Iterable<SignResponse>>
 
     @FormUrlEncoded
     @POST("register")
@@ -29,14 +36,13 @@ interface Endpoint {
                  @Field("city")city:String):Observable<Iterable<SignResponse>>
 
     @GET("product")
-    fun product(@Query("limit") limit: Int):Observable<Iterable<ProductResponse>>
+    fun product():Observable<Iterable<ProductResponse>>
 
     @GET("destinasi")
     fun destination():Observable<Iterable<DestinasiResponse>>
 
     @GET("bandara")
     fun airport():Observable<BandaraResponse>
-
 
     @FormUrlEncoded
     @POST("checkout")
@@ -49,11 +55,27 @@ interface Endpoint {
                             @Field("nama_bandara")namaBandara:String,
                             @Field("provinsi") provinsi:String,
                             @Field("jam_terbang")jamTerbang: String,
-                            @Field("picture_pesawat")picturePesawat:String): Observable<Iterable<CheckoutResponse>>
+                            @Field("picture_pesawat")picturePesawat:String,
+                            @Field("picture_product")pictureProduct:String,
+                            @Field("name")name:String,
+                            @Field("rating")rating: Double): Observable<Iterable<CheckoutResponse>>
+
+    @FormUrlEncoded
+    @POST("checkout")
+    fun checkoutProduct(@Field("user_id") userId: Int,
+                        @Field("quantity")quantity:Int,
+                        @Field("total")total:Int,
+                        @Field("status")status:String,
+                        @Field("product_id")ProductId:Int,
+                        @Field("checkin")checkin:String,
+                        @Field("picture_product")pictureProduct:String,
+                        @Field("name")name:String,
+                        @Field("rating")rating:Double):Observable<Iterable<CheckoutResponse>>
 
     @GET("transaction")
     fun transactionPending(@Query("status") status:String):Observable<Iterable<TransactionResponse>>
 
     @GET("explore")
     fun explore():Observable<ExploreResponse>
+
 }

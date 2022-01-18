@@ -20,6 +20,9 @@ interface CheckoutContract {
                               namaBandara:String,
                               provinsi:String,
                               jamTerbang:String,
-                              picturePesawat:String)
+                              picturePesawat:String,
+                              pictureProduct:String,
+                              name:String,
+                              rating:Double)
     }
 }

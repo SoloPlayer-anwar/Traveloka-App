@@ -656,7 +656,7 @@
     </androidx.core.widget.NestedScrollView>
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -676,10 +676,10 @@
             android:layout_marginEnd="24dp"
             android:text="Page Checkout"
             android:textColor="@color/textSubtitle"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="@+id/back" />
 
         <TextView
             android:id="@+id/textView32"

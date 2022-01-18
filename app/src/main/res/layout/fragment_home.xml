@@ -119,7 +119,7 @@
                         android:drawableLeft="@drawable/ic_search"
                         android:drawablePadding="8dp"
                         android:padding="16dp"
-                        android:text="Cari destinasi anda disini"
+                        android:text="Cari adventure anda disini"
                         android:textColor="@color/abu" />
 
                 </LinearLayout>
@@ -206,6 +206,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivDestination"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_category_destinasi" />
@@ -227,6 +228,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivResto"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_category_food" />
@@ -249,6 +251,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivHotel"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_category_hotel" />
@@ -271,6 +274,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/ivAdventure"
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_category_adventure" />

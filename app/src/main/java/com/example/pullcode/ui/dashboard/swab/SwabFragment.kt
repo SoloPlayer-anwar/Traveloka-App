@@ -3,21 +3,20 @@ package com.example.pullcode.ui.dashboard.swab
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pullcode.R
 import com.example.pullcode.databinding.FragmentSwabBinding
 import com.example.pullcode.response.transaction.Data
 import com.example.pullcode.response.transaction.TransactionResponse
-import com.example.pullcode.ui.keranjang.AdapterPending
 import com.example.pullcode.ui.keranjang.PendingContract
 import com.example.pullcode.ui.keranjang.PendingPresenter
 
-class SwabFragment : Fragment(), PendingContract.View, AdapterPending.ItemAdapterCallback {
+class SwabFragment : Fragment(), PendingContract.View, AdapterSuccess.ItemAdapterCallback {
     private lateinit var binding: FragmentSwabBinding
     private lateinit var presenter: PendingPresenter
     var loadingDialog : Dialog? = null
@@ -73,7 +72,7 @@ class SwabFragment : Fragment(), PendingContract.View, AdapterPending.ItemAdapte
             binding.rvSuccess.visibility = View.INVISIBLE
             binding.lySuccess.visibility = View.VISIBLE
         }else {
-            val adapter = AdapterPending(transactionResponse.data, this)
+            val adapter = AdapterSuccess(transactionResponse.data,this)
             binding.rvSuccess.layoutManager = LinearLayoutManager(context)
             binding.rvSuccess.adapter = adapter
         }
@@ -100,8 +99,7 @@ class SwabFragment : Fragment(), PendingContract.View, AdapterPending.ItemAdapte
     }
 
     override fun onClick(v: View, data: Data) {
-        val intent = Intent(context, SuccessQrcodeActivity::class.java)
-            .putExtra("data", data)
-        startActivity(intent)
+        startActivity(Intent(context, SuccessQrcodeActivity::class.java).putExtra("data",data))
     }
+
 }

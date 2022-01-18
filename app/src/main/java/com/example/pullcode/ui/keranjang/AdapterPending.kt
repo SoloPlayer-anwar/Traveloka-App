@@ -30,16 +30,17 @@ class AdapterPending(private val listPending: List<Data>,
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         fun bindItem(data: Data, itemAdapterCallback: ItemAdapterCallback) {
             itemView.apply {
+
                 Glide.with(context)
-                    .load(data.destinasi?.picturePath)
+                    .load(data.pictureProduct)
                     .placeholder(R.drawable.animation)
                     .into(ivProduct)
 
-                tvName.text = data.destinasi?.name
+                tvName.text = data.name
                 tvPrice.formatPrice(data.total.toString())
                 tvStatus.text = data.status
 
-                btnPesan.setOnClickListener {
+               btnPesan.setOnClickListener {
                     itemAdapterCallback.onClick(it, data)
                 }
             }

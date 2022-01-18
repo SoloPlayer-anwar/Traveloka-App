@@ -5,10 +5,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class Chat (
-    var nameUser: String? = "",
     var pesan: String? = "",
     var waktu: String? = "",
-    var productImage: String? = "",
     var nameProduct: String? = "",
-    var priceProduct: String? = ""
+    var priceProduct: Int? = null,
+    var productImage: String? = "",
+    var nameUser: String? = "",
 ):Parcelable

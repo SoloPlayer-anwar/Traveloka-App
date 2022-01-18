@@ -12,9 +12,9 @@ class HomePresenter(private val view: HomeContract.View):HomeContract.Presenter 
         mCompositeDisposable = CompositeDisposable()
     }
 
-    override fun getHome(limit:Int) {
+    override fun getHome() {
         view.showLoading(true)
-        val disposable = HttpClient.getInstance().getApi()!!.product(limit)
+        val disposable = HttpClient.getInstance().getApi()!!.product()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

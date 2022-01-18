@@ -30,6 +30,7 @@ class CheckoutDestinationActivity : AppCompatActivity(), CheckoutContract.View {
     var loadingDialog: Dialog? = null
     private lateinit var presenter: CheckoutPresenter
     var filePath: String? = null
+    var fileProduct:String? = null
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,10 @@ class CheckoutDestinationActivity : AppCompatActivity(), CheckoutContract.View {
         val user = Traveling.getApp().getUser()
         val userResponse = Gson().fromJson(user, User::class.java)
 
+
+        binding.back.setOnClickListener {
+            finish()
+        }
 
         binding.ivPlus.setOnClickListener {
             var qty = binding.tvQuantity.text.toString().toInt()
@@ -67,6 +72,7 @@ class CheckoutDestinationActivity : AppCompatActivity(), CheckoutContract.View {
             .load(des?.picturePath)
             .placeholder(R.drawable.animation)
             .into(binding.ivProduct)
+        fileProduct = des?.picturePath
 
         binding.tvName.text = des?.name
         binding.ratingCheckout.rating = des?.rate?.toFloat() ?: 0f
@@ -127,6 +133,9 @@ class CheckoutDestinationActivity : AppCompatActivity(), CheckoutContract.View {
             val provinsi = binding.tvProvinsi.text
             val jamTerbang = binding.tvJam.text
             val picturePesawat = filePath
+            val pictureProduct = fileProduct
+            val name = des.name
+            val rating = des.rate
 
             presenter.submitDestination(
                 userId,
@@ -138,7 +147,10 @@ class CheckoutDestinationActivity : AppCompatActivity(), CheckoutContract.View {
                 namaBandara.toString(),
                 provinsi.toString(),
                 jamTerbang.toString(),
-                picturePesawat!!
+                picturePesawat!!,
+                pictureProduct!!,
+                name.toString(),
+                rating!!
             )
         }
 

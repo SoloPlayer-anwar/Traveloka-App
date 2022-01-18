@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnProduct"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnBack"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -64,7 +64,7 @@
         android:textColor="@color/white"
         android:textAllCaps="false"
         style="@style/Button.Secondary"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/btnProduct"
+        app:layout_constraintStart_toStartOf="@+id/btnProduct"
+        app:layout_constraintTop_toBottomOf="@+id/btnProduct" />
 </androidx.constraintlayout.widget.ConstraintLayout>

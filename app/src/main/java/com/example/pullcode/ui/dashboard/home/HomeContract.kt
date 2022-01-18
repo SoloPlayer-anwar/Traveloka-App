@@ -14,7 +14,7 @@ interface HomeContract {
     }
 
     interface Presenter: HomeContract, BasePresenter{
-        fun getHome(limit: Int)
+        fun getHome()
         fun getDestinasi()
     }
 }

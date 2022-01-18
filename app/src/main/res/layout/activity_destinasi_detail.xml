@@ -45,20 +45,33 @@
             app:layout_constraintTop_toBottomOf="@+id/tvPrice">
 
 
+            <ImageView
+                android:id="@+id/ivPesan"
+                android:padding="15dp"
+                android:background="@drawable/button_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnBooking"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnBooking"
+                app:srcCompat="@drawable/ic_message" />
+
             <Button
                 android:id="@+id/btnBooking"
+                style="@style/Button.Primary"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="24dp"
-                android:text="Booking Destination"
-                android:textSize="17dp"
                 android:fontFamily="@font/poppins_medium"
-                style="@style/Button.Primary"
+                android:text="Booking Destination"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+                app:layout_constraintEnd_toStartOf="@+id/ivPesan"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout6"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
@@ -158,12 +171,14 @@
 
             <TextView
                 android:id="@+id/tvDesc"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="halioi"
                 android:textColor="@color/abu"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView43"
                 app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
@@ -171,13 +186,13 @@
                 android:id="@+id/cardView5"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
                 app:cardCornerRadius="6dp"
                 app:cardElevation="17dp"
-                android:layout_marginEnd="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvDesc"
-                app:layout_constraintTop_toBottomOf="@+id/tvDesc">
+                app:layout_constraintTop_toBottomOf="@+id/textView51">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -202,7 +217,7 @@
                 android:text="Fasilitas"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="@+id/cardView5"
-                app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
 
             <LinearLayout
                 android:id="@+id/linearLayout6"
@@ -320,6 +335,83 @@
                 android:background="@drawable/shape_category"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Lokasi"
+                style="@style/Textview.Home"
+                app:layout_constraintStart_toStartOf="@+id/tvDesc"
+                app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="@+id/cardView5"
+                app:layout_constraintStart_toStartOf="@+id/cardView5"
+                app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/map"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_success"
+                        android:src="@drawable/ic_panduan_lokasi" />
+
+                    <TextView
+                        style="@style/Textview.Home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Petunjuk arah" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/arah"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_success"
+                        android:src="@drawable/ic_petunjuk_arah" />
+
+                    <TextView
+                        style="@style/Textview.Home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Panduan map" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView

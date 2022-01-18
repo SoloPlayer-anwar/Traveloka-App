@@ -21,11 +21,14 @@ class CheckoutPresenter(private val view: CheckoutContract.View): CheckoutContra
         namaBandara:String,
         provinsi:String,
         jamTerbang:String,
-        picturePesawat:String
+        picturePesawat:String,
+        pictureProduct:String,
+        name:String,
+        rating:Double
     ) {
         view.showLoading(true)
         val disposable = HttpClient.getInstance().getApi()!!.checkoutDestination(
-            userId, quantity, total, "PENDING", destinationId, checkin,namaBandara, provinsi, jamTerbang,picturePesawat
+            userId, quantity, total, "PENDING", destinationId,checkin,namaBandara, provinsi, jamTerbang,picturePesawat,pictureProduct,name, rating
         )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

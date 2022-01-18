@@ -41,6 +41,10 @@
 
             <SearchView
                 android:id="@+id/searchView"
+                android:iconifiedByDefault="false"
+                android:queryHint="Cari bandara anda"
+                android:theme="@style/Textview.Poppins16dpTitle"
+                android:queryBackground="@drawable/shape_constrain"
                 android:layout_width="match_parent"
                 android:layout_height="55dp" />
 

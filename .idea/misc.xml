@@ -21,31 +21,45 @@
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/drawable/shape_edit_text.xml" value="0.178125" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/drawable/shape_horizontal.xml" value="0.2203125" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/drawable/view_shape.xml" value="0.2203125" />
-        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_bandara.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_adventure.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_bandara.xml" value="0.25" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_chat.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_checkout_destination.xml" value="0.25" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_checkout_products.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_destinasi.xml" value="0.25" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_destinasi_detail.xml" value="0.22" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_holidays.xml" value="0.25" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_hotels.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_maps.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_payment.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_pending.xml" value="0.18" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_products_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_register_success.xml" value="0.25" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_resto.xml" value="0.22" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_search.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_selected.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_success_qrcode.xml" value="0.2" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/activity_video.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_destinations.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_explore.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_products.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/fragment_swab.xml" value="0.25" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_adapter_success.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_all_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_bandara.xml" value="0.5" />
-        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_barcode.xml" value="0.2" />
-        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_barcode.xml" value="0.18" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_chat.xml" value="0.33" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_chat_solo.xml" value="0.33" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_horizontal.xml" value="0.33" />
-        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_pending.xml" value="0.33" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_pending.xml" value="0.22" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_search_all.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_search_layout.xml" value="0.33" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_user_explore.xml" value="0.67" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/item_video.xml" value="0.33" />
         <entry key="..\:/Users/ukarp/AndroidStudioProjects/Pullcode/app/src/main/res/layout/loading_dialog.xml" value="0.20416666666666666" />

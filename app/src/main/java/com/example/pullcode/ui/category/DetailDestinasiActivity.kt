@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.pullcode.R
 import com.example.pullcode.databinding.ActivityDestinasiDetailBinding
 import com.example.pullcode.response.destinasi.Data
+import com.example.pullcode.ui.chat.ChatActivity
 import com.example.pullcode.utils.Helpers.formatPrice
 import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.annotations.MarkerOptions
@@ -27,6 +28,11 @@ class DetailDestinasiActivity : AppCompatActivity() {
         Mapbox.getInstance(applicationContext, getString(R.string.mapbox_access_token))
         val des = intent.getParcelableExtra<Data>("des")
 
+        binding.ivPesan.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+                .putExtra("des", des)
+            startActivity(intent)
+        }
 
         mapView = binding.mapView
         mapView!!.onCreate(savedInstanceState)
@@ -75,7 +81,11 @@ class DetailDestinasiActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.tvAddress.setOnClickListener {
+        binding.map.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(des?.map)))
+        }
+
+        binding.arah.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(des?.map)))
         }
 
